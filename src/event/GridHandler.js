@@ -36,8 +36,8 @@ async function gridHandler(socket, data) {
 
   if (enemy.grid !== null && enemy.socketid in activeConnections) {
     const enemySocket = activeConnections[enemy.socketid];
-    socket.emit('start-room', { turn: !enemyIsPlayer1, enemyGrid, myGrid: grid });
-    enemySocket.emit('start-room', { turn: enemyIsPlayer1, enemyGrid, myGrid: enemy.grid });
+    socket.emit('start-room', { turn: !enemyIsPlayer1, enemyGrid });
+    enemySocket.emit('start-room', { turn: enemyIsPlayer1, enemyGrid });
   }
 }
 

@@ -7,6 +7,7 @@ async function saveNewPlayer(socket) {
     socketid: socket.id,
     state: 'created',
     grid: null,
+    bombgrid: Array(10).fill(null).map(() => Array(10).fill(null)),
   });
 
   activeConnections[socket.id] = socket;
